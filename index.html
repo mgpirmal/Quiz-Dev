@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King of Developers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body class= "text-center bg-image"style="background-image: url(assets/Tronn.jpg);">
+
+  <!-- HiScore link and timer -->
+    <ul class="nav nav-pills nav-fill bg-dark">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="hiScore.html">HiScore</a>
+        </li>
+        <li class="nav-item">
+          <p class=" timer-count" style="color: aliceblue;padding: 5px;">Timer</p>
+        </li>
+      </ul>
+      <br>
+<!-- Jumbotron/ Description -->
+    <h1 class="Display-1" style="text-align: center;color: aliceblue;padding-top: 35px;">Welcome to King of Developers</h1>
+    <p class="lead" style="text-align: center;color: aliceblue;padding-bottom: 60px;">You will be asked 10 questions that relates to Web Development. Finish the quiz before the alotted time and be the next King of Developers!</p>
+
+
+    <!-- Quiz Content will show up here -->
+    <section class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+    <div class="card text-dark mb-3">
+        <h5 class="btn btn-success start-button">Start</h5>
+        <div class="card-body">
+          <h5 class="card-title"id="question">You will have 25 seconds!</h5>
+          <p class="card-text">Choose the best answer below.</p>
+          <a href="#" class="btn btn-primary choice"style="margin: 5px;"data-number ="1">Are</a>
+          <a href="#" class="btn btn-primary choice"style="margin: 5px;"data-number ="2">You</a>
+          <a href="#" class="btn btn-primary choice"style="margin: 5px;"data-number ="3">The</a>
+          <a href="#" class="btn btn-primary choice"style="margin: 5px;"data-number ="4">King?</a>
+
+          <div class="col-md-2"></div>
+
+        </div>
+      </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
+</body>
+</html>
