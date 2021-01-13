@@ -18,25 +18,34 @@
       </ul>
       <br>
 
-    <h1 class="Display-1" style="text-align: center;color: aliceblue;padding-top: 35px;">Welcome to King of Developers</h1>
-    <p class="lead" style="text-align: center;color: aliceblue;padding-bottom: 60px;">You will be asked 10 questions that relates to Web Development. Finish the quiz before the alotted time and be the next King of Developers!</p>
+    <h1 class="Display-1" style="text-align: center;color: aliceblue;padding: 35px;">Welcome to the Hi-Score Screen</h1>
+  
 
     <section class="container">
         <div class="row">
-            <div class="col-md-2"></div>
             <div class="col-md-8">
     <div class="card text-dark mb-3">
-        <h5 class="card-header">Question</h5>
-        <div class="card-body">
-          <h5 class="card-title">What does HTML stand for?</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">With supporting text below as a natural lead-in to additional content</a>
-          <a href="#" class="btn btn-primary">With supporting text below as a natural lead-in to additional content</a>
-          <a href="#" class="btn btn-primary">With supporting text below as a natural lead-in to additional content</a>
-          <a href="#" class="btn btn-primary">With supporting text below as a natural lead-in to additional content</a>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
+        <h5 class="card-header">Hall of Fame</h5>
+        <ul class="list-group" id="highScoresList">
+          <!-- <li class="list-group-item">Harry Potter--4--100</li>
+          <li class="list-group-item">Sonic--4--80</li>
+          <li class="list-group-item">Ekko--4--70</li>
+          <li class="list-group-item">Bob the Builder--3--80</li>
+          <li class="list-group-item">Kai the Cat--3--40</li> -->
+        </ul>
+          
+        
+            </div>
+            </div>
+            <div class="card col-md-4">
+              <div class="mb-3">
+                <h5 class="card-header">Name</h5>
+              <input id="username" type="text"class="form-control" placeholder="Name Here">
+              <h5 id="finalScore"class="card-text">100</h5>
+             
+              <!--Button is set to disabled until typed into  -->
+              <button id= "saveScoreBtn"class="btn btn-primary choice" type="submit"margin: 5px;" onclick="saveHighScore(event)" disabled>Save Your HighScore</button>
+            </div>
             </div>
         </div>
     </section>
@@ -44,5 +53,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="assets/hiScore.js"></script>
 </body>
 </html>

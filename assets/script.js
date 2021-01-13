@@ -1,9 +1,9 @@
-var win = document.querySelector(".win");
-var lose = document.querySelector(".lose");
 var timerElement = document.querySelector(".timer-count");
 var startButton = document.querySelector(".start-button");
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice"));
+const questionCounterText = document.getElementById("questionCounter");
+const scoreText = document.getElementById("score");
 
 let currentQuestion = {};
 
@@ -49,15 +49,14 @@ let questions = [
   
 ]
 const questionAmount = 4;
+const bonus = 1;
 
-
-var isWin = false;
 var timer;
 var timerCount;
 var timerResults;
 
 
-//startButton.addEventListener("click", startGame);
+
 
 
 // When the game starts, reset Timer and begin new random question
@@ -74,19 +73,18 @@ startGame =() => {
     startTimer();
 };
 getNewQuestion = () => {
-
 if(availableQuestions.length === 0){
 //go to Hiscore page when all questions were used
-console.log(score);
-timerCount.textContent = timerResults;
-console.log(timerResults);
-localStorage.setItem("winCount", timerResults);
+//set timer and score value
+localStorage.setItem("mostRecentScore", score);
+localStorage.setItem("timerResults",timerResults)
 
 return window.location.assign("\hiScore.html");
 }
-// adds up amount of questions
+// adds up questions number and displays it
   questionCounter++;
-
+  questionCounterText.innerText = "Question "+ questionCounter+ "/"+questionAmount;
+//pulls random question
   const questionIndex = Math.floor(Math.random()*availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question;
@@ -95,6 +93,7 @@ return window.location.assign("\hiScore.html");
     const number = choice.dataset["number"];
     choice.innerText = currentQuestion["choice" + number];
   });
+  //erase question from array
   availableQuestions.splice(questionIndex,1);
   acceptingAnswers= true;
 };
@@ -110,9 +109,13 @@ choices.forEach(choice =>{
       let classToApply = 'btn-danger';
       if (selectedAnswer == currentQuestion.answer) {
         classToApply = 'btn-success';
-        score++;
     
       };
+
+      if (classToApply === 'btn-success'){
+        incrementScore(bonus);
+      }
+//set a time to see color change for right and wrong answers
       selectedChoice.parentElement.classList.add(classToApply);
       setTimeout(()=>{
      
@@ -124,6 +127,11 @@ choices.forEach(choice =>{
     });
 
 });
+
+incrementScore = num => {
+  score += num;
+  scoreText.innerText == score;
+}
 //startGame();
 
 // function startGame() {
@@ -150,9 +158,9 @@ function startTimer() {
       timerElement.textContent = timerCount;
       if (timerCount >= 0) {
         // Tests if win condition is met
-        if (score = questionAmount && timerCount > 0) {
+        if (availableQuestions.length === 0 && timerCount > 0) {
           // Clears interval and stops timer
-          winQuiz();
+         timerResults= timerCount
           clearInterval(timer);
           
         }
