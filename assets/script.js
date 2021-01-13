@@ -127,30 +127,17 @@ choices.forEach(choice =>{
     });
 
 });
-
+//score counter
 incrementScore = num => {
   score += num;
   scoreText.innerText == score;
 }
-//startGame();
-
-// function startGame() {
-//    isWin = false;
-//   timerCount = 100;
-//   // Prevents start button from being clicked when round is in progress
-//   startButton.disabled = true;
-//   startTimer()
-// }
 
 
 
 
 
-
-
-
-
-// The setTimer function starts and stops the timer and triggers winQuiz() and noFinish()
+// The setTimer function starts and stops the timer and saves timer results when no more questions are avaliable
 function startTimer() {
     // Sets timer
     timer = setInterval(function() {
@@ -159,7 +146,7 @@ function startTimer() {
       if (timerCount >= 0) {
         // Tests if win condition is met
         if (availableQuestions.length === 0 && timerCount > 0) {
-          // Clears interval and stops timer
+          // Clears interval and saves timer
          timerResults= timerCount
           clearInterval(timer);
           
@@ -174,39 +161,5 @@ function startTimer() {
     }, 100);
   }
 
-  // function winQuiz() {
-  //   wordBlank.textContent = "YOU WON!!!🏆 ";
-  //   winCounter++
-  //   startButton.disabled = false;
-  //   win.textContent = winCounter;
-  //   localStorage.setItem("winCount", winCounter);
-    
-  // }
 
-  // function getResults() {
-  //   // Get stored value from client storage, if it exists
-  //   var storedWins = localStorage.getItem("winCount");
-  //   // If stored value doesn't exist, set counter to 0
-  //   if (storedWins === null) {
-  //     winCounter = 0;
-  //   } else {
-  //     // If a value is retrieved from client storage set the winCounter to that value
-  //     winCounter = storedWins;
-  //   }
-  //   //Render win count to page
-  //   win.textContent = winCounter;
-  // }
-
-//   //This runs when Quiz is completed
-//   function winQuiz(){
-//     isWin = true;
-
-//   }
-
-//   // This runs if time runs out
-//   function noFinish(){
-// isWin = false;
-//   }
-
-//   // Attach event listener to start button to call startGame function on click
  startButton.addEventListener("click", startGame);
