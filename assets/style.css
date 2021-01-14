@@ -1,0 +1,4 @@
+/* added this background and it works on local computer but does not seem to be working when live */
+body {
+    background-image: url("assets/Tronn.jpg");
+}
